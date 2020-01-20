@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+  background: rgb(241, 206, 252);
+}
+.highlight {
+  background: #ffa71a;
+}
+.sizeMes {
+  font-size: 12px;
+  text-align: left;
+  margin-left: 5px;
+  font-weight: bold;
+  color: rgb(158, 18, 223);
+}
+.app {
+  width: 100%;
+  margin: 20px auto;
+  max-width: 800px;
+  background: #4dc48e;
+  padding: 30px;
+  box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+.input-group {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.input-group label {
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f2f2f2;
+}
+.input-group input {
+  padding: 3px 5px;
+  max-width: 200px;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 6px;
+  border: solid 1px #ddd;
+  outline: 0;
+}
+.input-group input:focus {
+  border: solid 1px #06af63;
+}
+.meses-result {
+  margin-top: 20px;
+}
+.meses-list,
+.letras-result {
+  display: flex;
+  flex-wrap: wrap;
+}
+.meses-list {
+  width: 100%;
+}
+.list-item {
+  position: relative;
+  color: #f2f2f2;
+  font-weight: 600;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  flex-basis: 23.6%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-size: 17px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.list-item > span {
+  text-transform: capitalize;
+}
+.letras-result {
+  text-align: left;
+  color: rgb(77, 77, 77);
+  margin-top: 5px;
+  background: rgb(230, 230, 230);
+  padding: 0 15px;
+  flex: 1;
+}
+.numberResult {
+  color: royalblue;
+}
+.list-item--letra {
+  flex-basis: 33.3%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+h4 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #444;
+}
+.totals-list {
+  display: flex;
+  max-width: 400px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.totals-item {
+  flex-basis: 30%;
+  background: rgb(255, 189, 114);
+  font-weight: 700;
+  padding: 3px 0 3px 6px;
+  border-radius: 6px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+#chartResult{
+  background: #f4f4f4;
+}

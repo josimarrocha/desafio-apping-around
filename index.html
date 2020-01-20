@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <title>Desafio</title>
+</head>
+
+<body>
+  <div class="app" id="app" @keyup.ctrl.enter="show">
+    <div class="input-group">
+      <div>
+        <label>Digite letras de a-z</label>
+        <input id="input" type="text" v-model="valueInput" @input="encontrarMeses" @keyup="removeLetra" />
+      </div>
+    </div>
+    <div class="meses-result">
+      <ul class="meses-list">
+        <li class="list-item" v-for="(mes, value) in renderMeses" :key="mes + value">
+          <span v-if="isNumber(value)">{{mes}}</span>
+          <span v-else v-html="highlight(value)"></span>
+          <ul class="letras-result">
+            <li class="list-item--letra" v-if="isNumber(value)"></li>
+            <li class="list-item--letra" v-else v-for="(tt, i) in mes" :key="tt + i+ 1">
+              <span v-for="(qntd, letra) in tt" :key="qntd + letra + 1">
+                {{ letra }}:
+                <span class="numberResult">{{ qntd }}</span>
+              </span>
+            </li>
+          </ul>
+          <span v-if="isNumber(value)" class="sizeMes">Letras: {{mes.length}}</span>
+          <span v-else class="sizeMes">Letras: {{value.length}}</span>
+        </li>
+      </ul>
+      <h4>Totais:</h4>
+      <div class="totals">
+        <ul class="totals-list">
+          <li class="totals-item" v-for="(total, i) in totais" :key="total + i">
+            {{total.letra }}:
+            <span class="numberResult">{{ total.valor }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="chartResult" v-show="showChart">
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
